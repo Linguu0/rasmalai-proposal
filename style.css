@@ -41,8 +41,9 @@ h1 {
 }
 
 .image-container img {
-    max-width: 300px;
-    width: 100%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
     border-radius: 20px;
     animation: float 3s ease-in-out infinite;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);

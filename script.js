@@ -5,11 +5,19 @@ const mainImage = document.getElementById('main-image');
 
 // Add "running away" logic for No button
 noBtn.addEventListener('mouseover', moveNoButton);
-noBtn.addEventListener('click', moveNoButton); // In case they tap it on mobile
+noBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // prevent actual tap from registering if they manage to touch it
+    moveNoButton();
+});
+noBtn.addEventListener('click', moveNoButton); // fallback
 
 function moveNoButton() {
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 50);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 50);
+    // Keep the button well within the screen boundaries
+    const maxX = window.innerWidth - noBtn.offsetWidth - 40;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 40;
+    
+    const x = Math.max(20, Math.random() * maxX);
+    const y = Math.max(20, Math.random() * maxY);
     
     // Switch button to fixed positioning so it can fly anywhere on the screen
     noBtn.style.position = 'fixed';
@@ -20,7 +28,7 @@ function moveNoButton() {
 // Logic for clicking Yes
 yesBtn.addEventListener('click', () => {
     questionText.innerHTML = "Yay! I'm the luckiest! 🥰<br>You're my sweet rasmalai forever!";
-    mainImage.src = 'assets/rasmalai_happy.png';
+    mainImage.src = 'assets/tapasya_happy.png';
     yesBtn.style.display = 'none';
     noBtn.style.display = 'none';
     

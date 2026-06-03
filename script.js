@@ -28,7 +28,7 @@ function moveNoButton() {
 // Logic for clicking Yes
 yesBtn.addEventListener('click', () => {
     questionText.innerHTML = "Yay! I'm the luckiest! 🥰<br>You're my sweet rasmalai forever!";
-    mainImage.src = 'assets/tapasya_happy.png';
+    mainImage.src = 'assets/tapasya_happy.png?v=2';
     yesBtn.style.display = 'none';
     noBtn.style.display = 'none';
     

@@ -10,18 +10,28 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #ffe6f2 0%, #fff0f5 50%, #fff5e6 100%);
+    background: linear-gradient(135deg, #2b0a16 0%, #4a0e25 50%, #2b0a16 100%);
     overflow: hidden;
+    color: #fff;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(30, 10, 20, 0.6);
     padding: 40px;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 40px rgba(255, 107, 129, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 159, 179, 0.2);
     max-width: 90vw;
     z-index: 10;
     position: relative;
@@ -29,11 +39,12 @@ body {
 }
 
 h1 {
-    font-family: 'Pacifico', cursive;
-    color: #ff6b81;
-    font-size: 2.5rem;
+    font-family: 'Great Vibes', cursive;
+    color: #ffb6c1;
+    font-size: 3.8rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(255, 107, 129, 0.2);
+    text-shadow: 0 0 15px rgba(255, 107, 129, 0.5);
+    line-height: 1.2;
 }
 
 .image-container {
@@ -77,20 +88,23 @@ button {
 }
 
 #yes-btn {
-    background: linear-gradient(45deg, #ff6b81, #ff4757);
+    background: linear-gradient(45deg, #ff4757, #ff6b81);
     color: white;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    transform-origin: center;
 }
 
 #yes-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+    transform: scale(1.05); /* initial hover scale */
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
 }
 
 #no-btn {
-    background: white;
-    color: #ff4757;
-    border: 2px solid #ff4757;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffb6c1;
+    border: 2px solid #ffb6c1;
     position: relative; /* important for script */
+    backdrop-filter: blur(5px);
 }
 
 /* For flying hearts after yes */
